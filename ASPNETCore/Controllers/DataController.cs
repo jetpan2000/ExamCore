@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ASPNETCore.Controller
+namespace ASPNETCore.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -34,6 +34,13 @@ namespace ASPNETCore.Controller
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return "logged out";
         }
+
+        //[HttpGet]
+        //[Route("/api/manage")]
+        //public IActionResult Manage()
+        //{
+        //    return View();
+        //}
 
         [HttpGet]
         [Route("/api/auth/{username}/{password}")]
