@@ -1,0 +1,77 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Configurations>Debug;Release;ReleaseV2;Stable;BetaV2;Feature</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>C:\Projects\CHODotNet\wwwroot-4\packages\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Stable|AnyCPU'">
+    <OutputPath>C:\Projects\CHODotNet\wwwroot-4\packages\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Feature|AnyCPU'">
+    <OutputPath>C:\Projects\CHODotNet\wwwroot-4\packages\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard1.6\CHOStandardLibrary.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseV2|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard1.6\CHOStandardLibrary.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="MSSQL\CommandModels\**" />
+    <Compile Remove="MSSQL\General\**" />
+    <Compile Remove="MSSQL\Models\**" />
+    <Compile Remove="MSSQL\QueryModels\**" />
+    <Compile Remove="Utils\PDF\**" />
+    <EmbeddedResource Remove="MSSQL\CommandModels\**" />
+    <EmbeddedResource Remove="MSSQL\General\**" />
+    <EmbeddedResource Remove="MSSQL\Models\**" />
+    <EmbeddedResource Remove="MSSQL\QueryModels\**" />
+    <EmbeddedResource Remove="Utils\PDF\**" />
+    <None Remove="MSSQL\CommandModels\**" />
+    <None Remove="MSSQL\General\**" />
+    <None Remove="MSSQL\Models\**" />
+    <None Remove="MSSQL\QueryModels\**" />
+    <None Remove="Utils\PDF\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="MSSQL\General\CommandModels\GeneralCommand.cs" />
+    <Compile Include="MSSQL\General\Models\ApplicationSetting.cs" />
+    <Compile Include="MSSQL\General\QueryModels\ApplicationSettingQuery.cs" />
+    <Compile Include="MSSQL\General\StoreProcGroup.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mandrill.net" Version="4.1.0" />
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.0-msbuild2-final" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.0" />
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="2.0.0" />
+    <PackageReference Include="Microsoft.NETCore.Targets" Version="2.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="NLog" Version="5.0.0-beta09" />
+    <PackageReference Include="MimeMapping" Version="0.1.6" />
+    <PackageReference Include="System.Collections" Version="4.3.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.4.2" />
+    <PackageReference Include="System.Diagnostics.Tools" Version="4.3.0" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+    <PackageReference Include="System.Linq.Expressions" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Runtime" Version="4.3.0" />
+    <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.0" />
+  </ItemGroup>
+
+</Project>
