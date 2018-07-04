@@ -16,6 +16,15 @@ namespace ASPNETCore.Controllers
         }
 
         [HttpGet]
+        [Route("/home/test")]
+
+        public ActionResult Test() => View();
+
+        [HttpGet]
+        [Route("/home/login")]
+        public ActionResult Login() =>View();
+
+        [HttpGet]
         [Route("/home/manage")]
         public ActionResult Manage()
         {

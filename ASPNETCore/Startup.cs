@@ -45,7 +45,11 @@ namespace ASPNETCore
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             ///this line
-            services.AddAuthentication(o=> { o.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme; }).AddCookie(CookieAuthenticationDefaults.AuthenticationScheme);
+            services.AddAuthentication(o => { o.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+
+            }).AddCookie(options => {
+                options.AccessDeniedPath = "/home/test";
+                options.LoginPath = "/home/login"; });  //  CookieAuthenticationDefaults.AuthenticationScheme
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

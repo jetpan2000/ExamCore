@@ -15,7 +15,7 @@ namespace ASPNETCore.Controllers
     [ApiController]
     public class DataController : ControllerBase
     {
-        [Authorize]
+        [Authorize(AuthenticationSchemes= CookieAuthenticationDefaults.AuthenticationScheme)]
         [HttpGet("{id}", Name = "GetTodo")]
         public ActionResult<string> GetById(long id)
         {
