@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="@ViewBag.Lang">
+@{ 
+    var culture = (ViewBag.Lang == "fr")? "fr-CA" : "en-CA";
+}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+    <script src="https://cdn.polyfill.io/v1/polyfill.min.js?features=Intl.~locale.fr-CA,Intl.~locale.en-CA"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('45', { packages: ['corechart', 'bar', 'table'], 'language': '@culture' });
+    </script>
+    <script src="/secure/js/vendor/modernizr-2.7.0.min.js"></script>
+    <script src="/secure/js/vendor/jquery-1.10.2.js"></script>
+</head>
+<body class="home page-template page-template-template-home page-template-template-home-php page canadahelps ch-2016-interim discovery_js en">
+    @RenderSection("styles", false)
+    <styles lang="@ViewBag.Lang"></styles>
+     @Html.Partial("~/Views/Shared/Section/Header_" + (string)ViewBag.Lang + ".cshtml", (string)@ViewBag.App)
+    <div id="main-wrapper">
+        @RenderBody()
+    </div>
+    @Html.Partial("~/Views/Shared/Section/Footer_" + (string)ViewBag.Lang + ".cshtml", (string)ViewBag.ServerVersion)
+    <scripts lang="@ViewBag.Lang"></scripts>
+</body>
+</html>

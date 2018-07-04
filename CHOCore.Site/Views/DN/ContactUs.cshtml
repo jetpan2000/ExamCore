@@ -1,0 +1,148 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@model CHOCore.Site.ViewModels.ContactUsViewModel
+@{
+    Layout = "~/Views/DN/_Layout.cshtml";
+}
+
+@{
+    ViewData["LocalInfo"] = Localizer["LocalInfo"];
+}
+
+@section styles{
+  <style type="text/css">
+    .required-field {
+      margin-right: 1rem;
+      position: relative;
+    }
+
+      .required-field:after {
+        content: "*";
+        color: red;
+        position: absolute;
+        right: -10px;
+        top: 0;
+        font-size: 15px;
+      }
+
+    .cdn-contact-us-tax-receipt-link {
+      line-height: 2.4em;
+      font-size: 15px;
+    }
+
+    .cdn-contact-us-faq-link {
+      line-height: 2.4em;
+      font-size: 15px;
+    }
+
+    .cdn-contact-us-alert-danger {
+      color: #a94442;
+      background-color: #f2dede;
+      border-color: #ebccd1;
+      padding: 10px 20px;
+      border-radius: 5px 5px 5px 5px;
+    }
+
+      .cdn-contact-us-alert-danger ul li {
+        text-transform: capitalize;
+        list-style: circle;
+      }
+
+    .field-validation-error {
+      color: #C0392B;
+    }
+  </style>
+}
+@section scripts {
+
+}
+<div>
+  <div id="heading" style="padding: 20px 20px;">
+    @Localizer["ContactUsHeader"]
+    @ViewData["Test"]
+    <hr />
+  </div>
+  <div class="grid-container">
+    <form asp-controller="DN" asp-action="ContactUs" method="post">
+      <input type="hidden" asp-for="@Model.pageId"/>
+      <input type="hidden" asp-for="@Model.customSubject" />
+      <input type="hidden" asp-for="@Model.caseType" />
+      <input type="hidden" asp-for="@Model.charityName" />
+      <input type="hidden" asp-for="@Model.charityBN"/>
+      <div class="grid-x grid-padding-x">
+        <div class="small-3 cell">
+        </div>
+        <div class="small-9 cell">
+          <div asp-validation-summary="ModelOnly" class="cdn-contact-us-alert-danger"></div>
+        </div>
+      </div>
+      <div class="grid-x grid-padding-x">
+        @Localizer["NeedYourReceiptMessage"]
+      </div>
+      <div class="grid-x grid-padding-x">
+        @Localizer["QuestionsMessage"]
+      </div>
+      <div class="grid-x grid-padding-x">
+        @Localizer["AskCanadaHelpsMessage"]
+      </div>
+      <div class="grid-x grid-padding-x">
+        <div class="small-3 cell">
+          <label asp-for="@Model.senderName" class="text-right middle required-field"></label>
+        </div>
+        <div class="small-9 cell">
+          <input type="text" asp-for="@Model.senderName" />
+          <p><span asp-validation-for="@Model.senderName"></span></p>
+        </div>
+      </div>
+      <div class="grid-x grid-padding-x">
+        <div class="small-3 cell">
+          <label asp-for="@Model.subject" class="text-right middle required-field"></label>
+        </div>
+        <div class="small-9 cell">
+          <input type="text" asp-for="@Model.subject" />
+          <p><span asp-validation-for="@Model.subject"></span></p>
+        </div>
+      </div>
+      <div class="grid-x grid-padding-x">
+        <div class="small-3 cell">
+          <label asp-for="@Model.senderEmail" class="text-right middle required-field"></label>
+        </div>
+        <div class="small-9 cell">
+          <input type="text" asp-for="@Model.senderEmail" />
+          <p><span asp-validation-for="@Model.senderEmail"></span></p>
+        </div>
+      </div>
+      <div class="grid-x grid-padding-x">
+        <div class="small-3 cell">
+          <label asp-for="@Model.senderMessage" class="text-right middle required-field"></label>
+        </div>
+        <div class="small-9 cell">
+          <textarea asp-for="@Model.senderMessage" cols="3" rows="4"></textarea>
+          <p><span asp-validation-for="@Model.senderMessage"></span></p>
+        </div>
+      </div>
+      <div class="grid-x grid-padding-x">
+        <div class="small-3 cell">
+        </div>
+        <div class="small-9 cell">
+          <div class="g-recaptcha" data-sitekey="6LfWeg0UAAAAAOv2r6hqO_bWhqF7w0f_Ye3cilgA"></div>
+        </div>
+      </div>
+      <div class="grid-x grid-padding-x" style="margin-top: 15px;">
+        <div class="small-3 cell">
+        </div>
+        <div class="small-9 cell">
+          <input type="submit" value="@Localizer["SendButtonText"]!" class="button" />
+          @Html.Raw(ViewData["SuccessMSG"])
+        </div>
+      </div>
+    </form>
+    <div class="grid-x grid-padding-x">
+      @Localizer["TollFreeMessage"]
+    </div>
+    <div class="grid-x grid-padding-x">
+      @Localizer["LocalInfoMessage"]
+    </div>
+  </div>
+</div>
+

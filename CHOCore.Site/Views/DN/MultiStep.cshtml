@@ -1,0 +1,40 @@
+@using CHOCore.Site.ViewModels;
+
+@model DonateNowPageVM
+@{Layout = "~/Views/DN/_Layout.cshtml";}
+@*TODO either it should be here or in CHOUI*@
+@{
+    if (!(String.IsNullOrEmpty(Model.GoogleTagManagerAccount)))
+    {
+        @Html.Partial("~/Views/Shared/Templates/gtmContainer.cshtml", @Model.GoogleTagManagerAccount)
+    }
+    else if (!(String.IsNullOrEmpty(Model.GoogleAnalyticsAccount)))
+    {
+        @Html.Partial("~/Views/Shared/Templates/gaContainer.cshtml", @Model.GoogleAnalyticsAccount)
+    }
+}
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id='@ViewBag.CanadaHelpsGTM'"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script id="server-version">
+    const _server_version = '@ViewBag.ServerVersion';
+</script>
+<script id="gtm-container-template">
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', '@ViewBag.CanadaHelpsGTM');
+</script>
+<div id="tpgtmc"></div>
+<script type="text/javascript">
+    window.CHO_CDN_LoggedIn = ('@ViewBag.LoggedIn' === 'True' || '@ViewBag.LoggedIn' === 'true');
+</script>
+@Html.Partial("~/Views/Shared/Scripts/CDN_scripts.cshtml")
+
+<div id="cdn-mount"></div>
+<script src="/secure/js/cdn3.multistep.js?v=@ViewBag.Version"></script>

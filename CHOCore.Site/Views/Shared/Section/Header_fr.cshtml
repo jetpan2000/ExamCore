@@ -1,0 +1,122 @@
+﻿@model string
+@{
+    string appName = $"/en/{@Model}/Index";
+}
+<header id="navbar" class="banner navbar navbar-default navbar-static-top navbar-marcom" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/fr/">
+                <img src="/secure/img/header-logo-fr.png" alt="CanaDon - le don en toute simplicité">
+            </a>
+        </div>
+
+        <div id="navbar-mobile-cylinder" class="js-close-mobile-menu">
+            <div id="navbar-mobile-piston">
+                <div id="navbar-tools" class="row">
+                    <div id="navbar-session" class="col-xs-12 col-sm-offset-2 col-sm-10">
+                        <div id="navbar-language" class="btn-group">
+                            <a href="@appName" class="btn btn-link ">
+                                English
+                            </a>
+                        </div>
+                        <div id="navbar-help">
+                            <a href="/fr/aide/" class="btn btn-link">Aide</a>
+                            <ul>
+                                <li><a href="http://donorhelp.canadahelps.org/fr/">Aide pour les donateurs</a></li>
+                                <li><a href="http://charityhelp.canadahelps.org/fr/">Aide pour les organismes</a></li>
+                            </ul>
+                        </div>
+                        <div id="navbar-basket" class="btn-group">
+                            <a href="/fr/checkout/GivingBasket.aspx" class="btn btn-link">
+                                <small>
+                                    <span id="navbar-basket-count" class="label label-warning js-cart-quantity" style="display: none;"></span>
+                                </small>
+                                <img src="/secure/img/header-gift-basket.png">
+                                <span id="navbar-basket-label">
+                                    Panier de dons
+                                </span>
+                            </a>
+                        </div>
+                        <div id="navbar-user" class="btn-group">
+                            <a href="/fr/SignIn.aspx" class="btn btn-info dropdown-toggle ladda-button js-ajax-user-menu" data-style="zoom-in" data-language="fr">Ouvrir session</a>
+                        </div>
+                    </div>
+                </div>
+                <nav id="navbar-main-menu" class="navbar" role="navigation">
+                    <ul id="menu-primary-navigation-fr" class="nav navbar-nav">
+                        <li class="dropdown menu-faites-un-don">
+                            <a class="dropdown-toggle" href="/fr/faites-un-don/">Faites un don <b class="caret"></b></a>
+                            <ul>
+                                <li class="menu-trouver-un-organisme-de-bienfaisance"><a href="/fr/faites-un-don/#trouve">Trouver un organisme de bienfaisance</a></li>
+                                <li class="menu-faire-un-don-unique-ou-mensuel"><a href="/fr/faites-un-don/#trouve">Faire un don unique ou mensuel</a></li>
+                                <li class="menu-faire-un-don-de-valeurs-mobilieres"><a href="/fr/faites-un-don/faire-un-don-de-valeurs-mobilieres/">Faire un don de valeurs mobilières</a></li>
+                                <li class="menu-offrir-une-carte-cadeau-de-bienfaisance"><a href="/fr/cartes-cadeaux/orders/">Offrir une carte-cadeau de bienfaisance</a></li>
+                                <li class="menu-echanger-une-carte-cadeau-de-bienfaisance"><a href="/fr/faites-un-don/echanger-une-carte-cadeau-de-bienfaisance/">Échanger une carte-cadeau de bienfaisance</a></li>
+                                <li class="menu-parcourir-les-campagnes-des-organismes"><a href="/fr/campagnes/">Parcourir les campagnes des organismes</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-explorez">
+                            <a href="/fr/explorez/">Explorez</a>
+                            <ul>
+                                <li class="menu-populaire-en-ce-moment"><a href="/fr/explore/popular-now/">Populaire en ce moment</a></li>
+                                <li class="menu-decouverte-personnaliser"><a href="/fr/explore/personalized-discovery/">Découverte Personnalisér</a></li>
+                                <li class="menu-parcourir-les-campagnes"><a href="/fr/explore/campaigns/">Parcourir les campagnes</a></li>
+                                <li class="menu-explorez-les-cadeaux-de-bienfaisance"><a href="/fr/guide-de-cadeaux-de-bienfaisance/">Explorez les cadeaux de bienfaisance</a></li>
+                                <li class="menu-explorez-giving-report"><a href="/fr/le-rapport-sur-les-dons/">Le rapport sur les dons</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-faites-une-collecte-de-fonds">
+                            <a href="/fr/faites-une-collecte-de-fonds/">Faites une collecte de fonds</a>
+                            <ul>
+                                <li class="menu-trouver-une-collecte-de-fonds"><a href="/fr/explore/fundraisers">Trouver une collecte de fonds</a></li>
+                                <li class="menu-idees-de-collecte-de-fonds"><a href="http://givinglife.canadahelps.org/fr/blog/donner-de-facon-judicieuse/faire-de-chaque-journee-une-journee-memorable-conseils-pour-tous-en-matiere-de-collecte-de-fonds/">Idées de collecte de fonds</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-pourquoi-canadon">
+                            <a href="/fr/pourquoi-canadon/">Pourquoi CanaDon</a>
+                            <ul>
+                                <li class="menu-facons-de-donner"><a href="/fr/pourquoi-canadon/facons-de-donner/">Façons de donner</a></li>
+                                <li class="menu-foire-aux-questions"><a href="http://donorhelp.canadahelps.org/fr/">Aide</a></li>
+                                <li class="menu-nos-frais"><a href="/fr/pourquoi-canadon/nos-frais/">Nos frais</a></li>
+                                <li class="menu-dons-dentreprise"><a href="/fr/pourquoi-canadon/dons-dentreprise/">Dons d’entreprise</a></li>
+                                <li class="menu-devenez-partenaire"><a href="/fr/pourquoi-canadon/devenez-partenaire/">Devenez partenaire</a></li>
+                                <li class="menu-notre-equipe"><a href="/fr/pourquoi-canadon/notre-equipe/">Notre équipe</a></li>
+                                <li class="menu-conseil-dadministration"><a href="/fr/pourquoi-canadon/conseil-dadministration/">Conseil d’administration</a></li>
+                                <li class="menu-joignez-vous-a-nous"><a href="/fr/pourquoi-canadon/joignez-vous-a-nous/">Joignez-vous à nous</a></li>
+                                <li class="menu-nous-soutenir"><a href="/fr/pourquoi-canadon/nous-soutenir/">Nous soutenir</a></li>
+                                <li class="menu-presse-et-medias"><a href="/fr/pourquoi-canadon/presse-et-medias/">Presse et Médias</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-blogue">
+                            <a href="/fr/blogue/">Blogue</a>
+                            <ul>
+                                <li class="menu-une-vie-genereuse"><a href="/fr/category/une-vie-genereuse/">Une vie généreuse</a></li>
+                                <li class="menu-la-vie-caritative"><a href="/fr/category/la-vie-caritative/">La vie caritative</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-pour-les-organismes">
+                            <a href="/fr/pour-les-organismes/">Pour les organismes</a>
+                            <ul>
+                                <li class="menu-faites-un-don"><a href="/fr/pour-les-organismes/faites-un-don/">Faites un don</a></li>
+                                <li class="menu-profils-dorganisme-de-bienfaisance"><a href="/fr/pour-les-organismes/profils-dorganisme-de-bienfaisance/">Profils d’organisme de bienfaisance</a></li>
+                                <li class="menu-comparez-les-solutions"><a href="/fr/pour-les-organismes/comparez-les-solutions/">Comparez les solutions</a></li>
+                                <li class="menu-frais"><a href="/fr/pour-les-organismes/frais/">Frais</a></li>
+                                <li class="menu-ressources-educatives"><a href="/fr/pour-les-organismes/educatives-ressources/">Ressources éducatives</a></li>
+                                <li class="menu-votre-boite-a-outils-des-fetes"><a href="/fr/pour-les-organismes/votre-boite-a-outils-des-fetes/">Votre boîte à outils des Fêtes</a></li>
+                                <li class="menu-faqs"><a href="http://charityhelp.canadahelps.org/fr/">Aide</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+    </div>
+</header>

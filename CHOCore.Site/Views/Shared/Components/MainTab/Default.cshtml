@@ -1,0 +1,19 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+<div class="donor-dashboard-menu">
+  <div class="menu-nav-wrapper">
+    <ul class="menu-navigation" style="display: block">
+      <li ID="tab0li"><a id="tab0" href="@Localizer["tab0NavUrl"]">@Localizer["tab0NavText"]</a></li>
+      <li ID="tab1li"><a id="tab1" href="@Localizer["tab1NavUrl"]">@Localizer["tab1NavText"]</a></li>
+      <li ID="tab2li"><a id="tab2" href="@Localizer["tab2NavUrl"]">@Localizer["tab2NavText"]</a></li>
+      <li ID="tab3li"><a id="tab3" href="@Localizer["tab3NavUrl"]">@Localizer["tab3NavText"]</a></li>
+      <li ID="tab4li" class="active"><a id="tab4" href="@Localizer["tab4NavUrl"]">@Localizer["tab4NavText"]</a></li>
+      <li ID="tab5li"><a id="tab5" href="@Localizer["tab5NavUrl"]">@Localizer["tab5NavText"]</a></li>
+    </ul>
+  </div>
+  <div class="donor-dashboard-submenu">
+    <nav class="cd-secondary-nav">
+    </nav>
+  </div>
+</div>

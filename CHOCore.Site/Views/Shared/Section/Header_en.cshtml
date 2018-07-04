@@ -1,0 +1,122 @@
+﻿@*TO DO: MAKE IT AS REACT COMPONENT*@
+@model string
+@{
+  string appName = $"/fr/{@Model}/Index";
+}
+<header id="navbar" class="banner navbar navbar-default navbar-static-top navbar-marcom" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/en/">
+                <img src="/secure/img/header-logo-en.png" alt="CanadaHelps.org - giving made simple">
+            </a>
+        </div>
+
+        <div id="navbar-mobile-cylinder" class="js-close-mobile-menu">
+            <div id="navbar-mobile-piston">
+                <div id="navbar-tools" class="row">
+                    <div id="navbar-session" class="col-xs-12 col-sm-offset-2 col-sm-10">
+                        <div id="navbar-language" class="btn-group">
+                            <a href="@appName" class="btn btn-link ">
+                                Français
+                            </a>
+                        </div>
+                        <div id="navbar-help">
+                            <a href="/en/help/" class="btn btn-link">Help</a>
+                            <ul>
+                                <li><a href="http://donorhelp.canadahelps.org/en/">Donor Help</a></li>
+                                <li><a href="http://charityhelp.canadahelps.org/en/">Charity Help</a></li>
+                            </ul>
+                        </div>
+                        <div id="navbar-basket" class="btn-group">
+                            <a href="/en/checkout/GivingBasket.aspx" class="btn btn-link">
+                                <small>
+                                    <span id="navbar-basket-count" class="label label-warning js-cart-quantity" style="display: none;"></span>
+                                </small>
+                                <img src="/secure/img/header-gift-basket.png">
+                                <span id="navbar-basket-label">
+                                    Giving Basket
+                                </span>
+                            </a>
+                        </div>
+                        <div id="navbar-user" class="btn-group">
+                            <a href="/en/SignIn.aspx" class="btn btn-info dropdown-toggle ladda-button js-ajax-user-menu" data-style="zoom-in" data-language="en">Sign In</a>
+                        </div>
+                    </div>
+                </div>
+                <nav id="navbar-main-menu" class="navbar" role="navigation">
+                    <ul id="menu-primary-navigation-en" class="nav navbar-nav">
+                        <li class="dropdown menu-donate">
+                            <a class="dropdown-toggle" href="/en/donate/">Donate <b class="caret"></b></a>
+                            <ul>
+                                <li class="menu-find-a-charity"><a href="/en/donate/#find">Find a Charity</a></li>
+                                <li class="menu-give-once-or-monthly"><a href="/en/donate/#find">Give Once or Monthly</a></li>
+                                <li class="menu-donate-securities"><a href="/en/donate/donate-securities/">Donate Securities</a></li>
+                                <li class="menu-give-a-charity-gift-card"><a href="/en/giftcards/orders/">Give a Charity Gift Card</a></li>
+                                <li class="menu-redeem-a-charity-gift-card"><a href="/en/donate/redeem-a-charity-gift-card/">Redeem a Charity Gift Card</a></li>
+                                <li class="menu-crisis-relief-centre"><a href="/en/crisis-relief-centre/">Crisis Relief Centre</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-explore">
+                            <a href="/en/explore-canadahelps/">Explore</a>
+                            <ul>
+                                <li class="menu-popular-now"><a href="/en/explore/popular-now/">Popular Now</a></li>
+                                <li class="menu-personalized-discovery"><a href="/en/explore/personalized-discovery/">Personalized Discovery</a></li>
+                                <li class="menu-browse-charity-campaigns"><a href="/en/campaigns/">Browse Charity Campaigns</a></li>
+                                <li class="menu-explore-charitable-gifts"><a href="/en/gift-guide/">Explore Charitable Gifts</a></li>
+                                <li class="menu-explore-giving-report"><a href="/en/the-giving-report/">The Giving Report</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="menu-fundraise">
+                            <a href="/en/fundraise/">Fundraise</a>
+                            <ul>
+                                <li class="menu-find-a-fundraiser"><a href="/en/explore/fundraisers/">Find a Fundraiser</a></li>
+                                <li class="menu-fundraising-ideas"><a href="http://givinglife.canadahelps.org/en/blog/fundraising/crowdfunding-tips-everyone-can-use/">Fundraising Ideas</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-why-canadahelps">
+                            <a href="/en/why-canadahelps/">Why CanadaHelps</a>
+                            <ul>
+                                <li class="menu-ways-to-give"><a href="/en/why-canadahelps/ways-to-give/">Ways to Give</a></li>
+                                <li class="menu-our-fees"><a href="/en/why-canadahelps/our-fees/">Our Fees</a></li>
+                                <li class="menu-corporate-giving"><a href="/en/why-canadahelps/corporate-giving/">Corporate Giving</a></li>
+                                <li class="menu-partner-with-us"><a href="/en/why-canadahelps/partner-with-us/">Partner With Us</a></li>
+                                <li class="menu-our-team"><a href="/en/why-canadahelps/our-team/">Our Team</a></li>
+                                <li class="menu-board-of-directors"><a href="/en/why-canadahelps/board-of-directors/">Board of Directors</a></li>
+                                <li class="menu-join-us"><a href="/en/why-canadahelps/join-us-2/">Join Us</a></li>
+                                <li class="menu-support-us"><a href="/en/why-canadahelps/support-us/">Support Us</a></li>
+                                <li class="menu-press-media"><a href="/en/why-canadahelps/press-media/">Press &amp; Media</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-blog">
+                            <a href="/en/blog/">Blog</a>
+                            <ul>
+                                <li class="menu-giving-life"><a href="/en/category/giving-life/">Giving Life</a></li>
+                                <li class="menu-charity-life"><a href="/en/category/charity-life/">Charity Life</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-for-charities">
+                            <a href="/en/for-charities/">For Charities</a>
+                            <ul>
+                                <li class="menu-register-today"><a href="/en/for-charities/compare-solutions/">Register Today</a></li>
+                                <li class="menu-customizable-donation-forms"><a href="/en/for-charities/donate-now/">Customizable Donation Forms</a></li>
+                                <li class="menu-peer-to-peer-social-fundraising"><a href="/en/for-charities/peer-to-peer-social-fundraising/">Peer-to-Peer Social Fundraising</a></li>
+                                <li class="menu-events-management"><a href="/en/for-charities/events-management/">Events Management</a></li>
+                                <li class="menu-charity-profiles"><a href="/en/for-charities/charity-profiles/">Charity Profiles</a></li>
+                                <li class="menu-crm-integration"><a href="/en/for-charities/crm-integration/">CRM Integration</a></li>
+                                <li class="menu-educational-resources"><a href="/en/for-charities/educational-resources/">Educational Resources</a></li>
+                                <li class="menu-our-charity-clients"><a href="/en/for-charities/charity-clients/">Our Charity Clients</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</header>

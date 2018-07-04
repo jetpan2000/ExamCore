@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html id="@ViewBag.CDNName" lang="@ViewBag.Lang">
+@{
+    var culture = (ViewBag.Lang == "fr") ? "fr-CA" : "en-CA";
+    string css = "/secure/css/cdn3." + @ViewBag.CDNName + ".css?v=" + @ViewBag.Version;
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Custom Donate Now</title>
+    <link rel="stylesheet" type="text/css" href="@css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+    <script src='https://www.google.com/recaptcha/api.js?hl=@culture'></script>
+    <environment include="Development,Beta,Publish_to_beta,Feature">
+        <!-- Development Includes -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-dom.js"></script>
+    </environment>
+    <environment exclude="Development,Beta,Publish_to_beta,Feature">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-dom.min.js"></script>
+    </environment>
+
+    <script type="text/javascript">
+        window.CHO_PAYPAL_ENV = '@ViewBag.PayPal_ENV';
+    </script>
+</head>
+<body>
+    @RenderSection("styles", false)
+    @RenderBody()
+    @RenderSection("scripts", false)
+</body>
+</html>

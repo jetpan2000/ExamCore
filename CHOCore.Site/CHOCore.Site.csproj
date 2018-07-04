@@ -1,0 +1,166 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <MvcRazorCompileOnPublish>true</MvcRazorCompileOnPublish>
+    <UserSecretsId>aspnet-CHOCore.Site-61F8C296-2E31-4E3F-86ED-A2BD6A09062C</UserSecretsId>
+    <Configurations>Debug;Beta;Staging;ReleaseV2;Stable;BetaV2;Feature</Configurations>
+    <StartupObject />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Beta|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE;BETA;NETCOREAPP2_0</DefineConstants>
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='BetaV2|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE;BETA;NETCOREAPP2_0</DefineConstants>
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Stable|AnyCPU'">
+    <DefineConstants>NETCOREAPP2_0;STABLE;</DefineConstants>
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Feature|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;NETCOREAPP2_0;FEATURE</DefineConstants>
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Staging|AnyCPU'">
+    <DefineConstants>NETCOREAPP2_0;STAGING</DefineConstants>
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;NETCOREAPP2_0</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="appsettings.Beta.json" />
+    <Content Remove="appsettings.Release.json" />
+    <Content Remove="appsettings.ReleaseV2.json" />
+    <Content Remove="appsettings.Feature.json" />
+    <Content Remove="appsettings.Stable.json" />
+    <Content Remove="appsettings.Staging.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Localization" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.4.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CHOCore.ModelLibrary\CHOCore.ModelLibrary.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\css\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="appsettings.Beta.json">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="appsettings.Release.json">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="appsettings.ReleaseV2.json">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="appsettings.Stable.json">
+      <IsTransformFile>True</IsTransformFile>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="appsettings.Staging.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="appsettings.Feature.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <Compile Update="Resources\CHOCore.Controllers.DNController.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CHOCore.Controllers.DNController.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\CHOCore.Controllers.FavouritesController.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CHOCore.Controllers.FavouritesController.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\ViewModels\ContactUsViewModel.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ContactUsViewModel.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Views.DN.ContactUs.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Views.DN.ContactUs.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Views.Shared.Components.MainTab.Default.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Views.Shared.Components.MainTab.Default.resx</DependentUpon>
+    </Compile>
+	<Content Update="appsettings.Development.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <TransformOnBuild>true</TransformOnBuild>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+
+    <Content Update="nlog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\CHOCore.Controllers.FavouritesController.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CHOCore.Controllers.FavouritesController.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\CHOCore.Controllers.FavouritesController.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\CHOCore.Controllers.DNController.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\CHOCore.Controllers.DNController.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CHOCore.Controllers.DNController.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\ViewModels\ContactUsViewModel.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\ViewModels\ContactUsViewModel.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ContactUsViewModel.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views.Shared.Components.MainTab.Default.fr.resx">
+      <LastGenOutput>Views.Shared.Components.MainNavTab.Default.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views.DN.ContactUs.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views.DN.ContactUs.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Views.DN.ContactUs.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views.Shared.Components.MainTab.Default.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Views.Shared.Components.MainTab.Default.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
+
+</Project>

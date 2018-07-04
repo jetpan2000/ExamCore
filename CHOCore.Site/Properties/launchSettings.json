@@ -1,0 +1,42 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": true,
+    "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "https://localhost:8443",
+      "sslPort": 8443
+    },
+    "iisExpress": {
+      "applicationUrl": "https://localhost:44348/",
+      "sslPort": 44348
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "https://localhost:44348/Donordashboard",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "CHOCore.Site": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\inetpub\\CHOCore",
+      "launchBrowser": true,
+      "launchUrl": "https://canadahelps.local/Donordashboard/Index",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:8443/"
+    },
+    "IIS Express (Beta)": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "https://localhost:44348/Donordashboard",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Beta"
+      }
+    }
+  }
+}

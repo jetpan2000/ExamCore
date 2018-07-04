@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = @ViewBag.Message;
+    string headerText = (@ViewBag.Lang == "en") ? "Your Donor Account" : "Votre compte de donateur";
+}
+
+@Html.Partial("~/Views/Shared/Templates/gtmContainer.cshtml", (string)ViewBag.CanadaHelpsGTM)
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry%2Cdrawing%2Cplaces&key=AIzaSyD3dVMEtP9-nJLXa00flWcszkxedT2yyiU"></script>
+<script>
+    window.donorDashBoardAppSettings = @Html.Raw(@ViewBag.donorDashBoardAppSettings);
+</script>
+<div class="row">
+    <div class="container" style="padding-top:40px;">
+        <div class="col-md-12 donor-dashboard-title">
+            <h2>@headerText</h2>
+        </div>
+        <div id="donor_dashboard_app" data-section-module=“donor-dashboard” class="col-md-12">
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-12" style="padding: 35px 10px;">
+            <div id="recommendation-panel" data-content-types="because_you_liked,popular_now" data-context="giving_basket"></div>
+        </div>
+    </div>
+</div>
+
+
+
