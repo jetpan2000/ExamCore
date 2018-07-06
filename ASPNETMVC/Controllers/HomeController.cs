@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ASPNETMVC.Models;
+using ServiceStack.Redis;
 
 namespace ASPNETMVC.Controllers
 {
@@ -25,6 +26,9 @@ namespace ASPNETMVC.Controllers
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
+
+            var redisClient = new RedisClient("127.0.0.1", 6379);
+            redisClient.Set("Contact_visited_at", DateTime.Now.ToString());
 
             return View();
         }
