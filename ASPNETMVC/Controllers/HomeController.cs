@@ -27,15 +27,15 @@ namespace ASPNETMVC.Controllers
         {
             ViewData["Message"] = "Your contact page.";
 
-            var redisClient = new RedisClient("127.0.0.1", 6379);
-            redisClient.Set("Contact_visited_at", DateTime.Now.ToString());
+            //var redisClient = new RedisClient("127.0.0.1", 6379);
+            //redisClient.Set("Contact_visited_at", DateTime.Now.ToString());
 
-            var manager = new RedisManagerPool("localhost:6379");
-            using (var client = manager.GetClient())
-            {
-                client.Set("foo", "bar");
-                Console.WriteLine("foo={0}", client.Get<string>("foo"));
-            }
+            //var manager = new RedisManagerPool("localhost:6379");
+            //using (var client = manager.GetClient())
+            //{
+            //    client.Set("foo", "bar");
+            //    Console.WriteLine("foo={0}", client.Get<string>("foo"));
+            //}
 
             return View();
         }
