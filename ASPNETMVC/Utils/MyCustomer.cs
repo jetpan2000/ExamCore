@@ -30,15 +30,18 @@ namespace ASPNETMVC.Utils
 
     public class MyCustomer
     {
-        public MyCustomer()
+        EmailSender _emailSender;
+        public MyCustomer(EmailSender emailObj)
         {
+            this._emailSender = emailObj;
         }
-        public   bool AddNew(string email, EmailSender emailObj)
+        //  public   bool AddNew(string email, EmailSender emailObj)
+        public bool AddNew(string email)
         {
 
 
             //EmailSender emailObj = new EmailSender();
-            emailObj.Send(email, "subject", "content");
+            this._emailSender.Send(email, "subject", "content");
 
             // add to db this customer
             return true;

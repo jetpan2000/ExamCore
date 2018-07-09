@@ -16,12 +16,12 @@ namespace XUnitTestProject1
               Mock<EmailSender> emailSender = new Mock<EmailSender>();
               emailSender.Setup(x=>x.Send(email,"subject","content")).Returns(true);
             //arrange
-            MyCustomer mycust = new MyCustomer();
+            MyCustomer mycust = new MyCustomer(emailSender.Object);
             //act
             //  EmailSender emailSender = new EmailSender();
-            bool ret = mycust.AddNew(email, emailSender.Object);
-
-            bool ret2 = mycust.AddNew(email, new EmailSender());
+            bool ret = mycust.AddNew(email);
+            MyCustomer mycust2 = new MyCustomer(new EmailSender());
+             bool ret2 = mycust2.AddNew(email);
 
 
             Assert.True( ret);
