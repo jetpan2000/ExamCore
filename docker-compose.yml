@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  aspnetmvc:
+    image: ${DOCKER_REGISTRY}aspnetmvc
+    build:
+      context: .
+      dockerfile: ASPNETMVC\Dockerfile
